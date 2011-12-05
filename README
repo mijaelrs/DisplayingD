@@ -1,0 +1,10 @@
+This Atlassian JIRA tutorial shows you how to display a dialog with content from the server and have it interact with your page. 
+In this tutorial we will be using the scheduling of an issue to be fixed in particular version.
+
+This branch contains the plugin at the starting point of the tutorial
+
+This project is hosted at:
+https://bitbucket.org/nmenere/tutorial-jira-scheduler
+
+The tutorial is located at:
+https://developer.atlassian.com/display/JIRADEV/Displaying+Content+in+a+Dialog

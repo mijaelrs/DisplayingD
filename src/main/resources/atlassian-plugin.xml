@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+  </plugin-info>
+  <webwork1 key="scheduler-webwork-module" name="Scheduler Webwork Module" i18n-name-key="scheduler-webwork-module.name">
+    <description key="scheduler-webwork-module.description">The Scheduler Webwork Module Plugin</description>
+    <actions>
+      <action name="com.example.plugins.tutorial.jira.webwork.SchedulerWebworkModuleAction" alias="SchedulerWebworkModuleAction">
+        <view name="input">/templates/scheduler-webwork-module/input.vm</view>
+        <view name="error">/templates/scheduler-webwork-module/input.vm</view>
+      </action>
+    </actions>
+  </webwork1>
+  <resource type="i18n" name="i18n" location="atlassian-plugin"/>
+  <web-item name="Schedule Web Item" i18n-name-key="schedule-web-item.name" key="schedule-web-item" section="operations-top-level" weight="3">
+    <description key="schedule-web-item.description">The Schedule Web Item Plugin</description>
+    <conditions type="and">
+      <condition class="com.atlassian.jira.plugin.webfragment.conditions.IsIssueEditableCondition"/>
+      <condition class="com.atlassian.jira.plugin.webfragment.conditions.HasIssuePermissionCondition">
+        <param name="permission" value="edit"/>
+      </condition>
+      <condition class="com.atlassian.jira.plugin.webfragment.conditions.IsFieldHiddenCondition" invert="true">
+        <param name="field" value="fixVersions"/>
+      </condition>
+    </conditions>
+    <label key="schedule-web-item.label"/>
+    <link linkId="schedule-web-item-link">/secure/SchedulerWebworkModuleAction!default.jspa?id=${issue.id}</link>
+  </web-item>
+</atlassian-plugin>
