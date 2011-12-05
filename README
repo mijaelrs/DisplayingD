@@ -4,7 +4,7 @@ In this tutorial we will be using the scheduling of an issue to be fixed in part
 This branch contains the plugin at the starting point of the tutorial
 
 This project is hosted at:
-https://bitbucket.org/nmenere/tutorial-jira-scheduler
+https://bitbucket.org/atlassian_tutorial/jira-scheduler-dialog-base.git
 
 The tutorial is located at:
 https://developer.atlassian.com/display/JIRADEV/Displaying+Content+in+a+Dialog
